@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a3 as n}from"./chunks/framework.7kCWGuEV.js";const F=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"kubernetes/pod.md","filePath":"kubernetes/pod.md"}'),e={name:"kubernetes/pod.md"},l=n("",9),p=[l];function t(h,k,d,r,o,c){return a(),i("div",null,p)}const y=s(e,[["render",t]]);export{F as __pageData,y as default};
