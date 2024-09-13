@@ -5,6 +5,7 @@ outline: deep
 # 环境准备
 
 ## docker 安装
+
 ## minikube 安装
 
 安装 [minikube](https://minikube.sigs.k8s.io/docs/)
@@ -43,6 +44,31 @@ kubectl cluster-info
 如果产生报错，则可能是集群没有启动，可以
 
 随后执行上面的命令查看集群状态，如果集群状态正常，则可以使用 `kubectl` 命令进行操作。
+
+Kubectl 的全部命令可以参考 [_kubectl Quick Reference_](https://kubernetes.io/docs/reference/kubectl/quick-reference)
+
+
+## kubectl 自动补全
+
+
+BASH
+```bash
+source <(kubectl completion bash) # set up autocomplete in bash into the current shell, bash-completion package should be installed first.
+echo "source <(kubectl completion bash)" >> ~/.bashrc # add autocomplete permanently to your bash shell.
+```
+You can also use a shorthand alias for kubectl that also works with completion:
+```
+alias k=kubectl
+complete -o default -F __start_kubectl k
+```
+ZSH
+```
+source <(kubectl completion zsh)  # set up autocomplete in zsh into the current shell
+echo '[[ $commands[kubectl] ]] && source <(kubectl completion zsh)' >> ~/.zshrc # add autocomplete permanently to your zsh shell
+```
+
+
+- [Kubectl上下文和配置](https://kubernetes.io/docs/reference/kubectl/quick-reference/#kubectl-context-and-configuration)
 
 ## 注册 docker hub 账号登录
 

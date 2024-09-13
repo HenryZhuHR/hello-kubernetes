@@ -6,15 +6,18 @@ import { DefaultTheme } from 'vitepress/theme'
  */
 const sidebar: DefaultTheme.Sidebar = [
   {
-    text: 'Start',
+    text: 'Start an adventure',
     items: [
-      { text: '环境安装', link: '/start/install' },
+      { text: 'Intro', link: '/' },
+      { text: 'Environment', link: '/start/install' },
     ]
   },
   {
     text: 'Kubernetes',
     items: [
+      { text: 'Intro', link: '/kubernetes/intro' },
       { text: 'Pod', link: '/kubernetes/pod' },
+      { text: 'Deployment', link: '/kubernetes/deployment' },
     ]
   },
   {
@@ -29,17 +32,25 @@ const sidebar: DefaultTheme.Sidebar = [
  * 主题配置 https://vitepress.dev/reference/default-theme-config
  */
 const themeConfig: DefaultTheme.Config = {
+  logo: '/kubernetes.svg',
   socialLinks: [
     { icon: 'github', link: 'https://github.com/HenryZhuHR/hello-kubernetes' }
   ],
   sidebar: sidebar,
+
 }
 
 
-// https://vitepress.dev/reference/site-config
+/**
+ * 站点配置 https://vitepress.dev/reference/site-config
+ */
 export default defineConfig({
-  title: "Hello Kubernetes",
   base: '/hello-kubernetes/',
-  description: "kubernetes Learning Log",
+  title: "Hello Kubernetes",
+  description: "kubernetes 学习记录",
+  srcDir: 'docs',
   themeConfig: themeConfig,
+  vite: {// Vite 配置选项
+    publicDir: '../.vitepress/public', // 相对于 docs 目录
+  },
 })
